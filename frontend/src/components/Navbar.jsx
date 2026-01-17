@@ -6,7 +6,9 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      <img src={assets.logo} className="w-36" alt="" />
+      <Link to='/'>
+        <img src={assets.logo} className="w-36" alt="" />
+      </Link>
 
       <ul className="hidden sm:flex text-sm gap-5 text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
@@ -91,16 +93,32 @@ loading-4 bg-black text-white rounded-full text-[8px]"
               />
               <p>Back</p>
             </div>
-            <NavLink onClick={()=> setVisible(false)} className="py-2 pl-6 border" to="/">
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-2 pl-6 border"
+              to="/"
+            >
               HOME
             </NavLink>
-            <NavLink onClick={()=> setVisible(false)} className="py-2 pl-6 border" to="/collection">
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-2 pl-6 border"
+              to="/collection"
+            >
               COLLECTION
             </NavLink>
-            <NavLink onClick={()=> setVisible(false)} className="py-2 pl-6 border" to="/about">
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-2 pl-6 border"
+              to="/about"
+            >
               ABOUT
             </NavLink>
-            <NavLink onClick={()=> setVisible(false)} className="py-2 pl-6 border" to="/contact">
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-2 pl-6 border"
+              to="/contact"
+            >
               CONTACT
             </NavLink>
           </div>
