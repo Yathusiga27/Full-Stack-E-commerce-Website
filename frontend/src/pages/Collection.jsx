@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { ShopContext } from "../context/shopContext";
+import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import Title from "../components/Title";
 import ProductItem from "../components/ProductItem";
 
 const Collection = () => {
-  const { products } = useContext(ShopContext);
+  const { products, search, showSearch } = useContext(ShopContext);
   const [showfilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -30,6 +30,12 @@ const Collection = () => {
 
   const applyFilter = () => {
     let productsCopy = products.slice();
+
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase()),
+      );
+    }
 
     //Category Filter
     if (category.length > 0) {
@@ -58,17 +64,15 @@ const Collection = () => {
         setFilterProducts(fpCopy.sort((a, b) => b.price - a.price));
         break;
       default:
+        applyFilter();
         break;
     }
   };
 
-  useEffect(() => {
-    setFilterProducts(products);
-  }, []);
 
   useEffect(() => {
     applyFilter();
-  }, [category, SubCategory]);
+  }, [category, SubCategory, search, showSearch]);
 
   useEffect(() => {
     sortProduct();
