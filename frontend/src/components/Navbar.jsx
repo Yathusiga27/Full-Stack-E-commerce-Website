@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+  const { setShowSearch } = useContext(ShopContext); // Add this
+
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      <Link to='/'>
+      <Link to="/">
         <img src={assets.logo} className="w-36" alt="" />
       </Link>
 
@@ -16,7 +19,11 @@ const Navbar = () => {
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
 
-        <NavLink to="/collection" className="flex flex-col items-center gap-1">
+        <NavLink
+          to="/collection"
+          className="flex flex-col items-center gap-1"
+          onClick={() => setShowSearch(true)} // Auto-show search when clicking collection
+        >
           <p>COLLECTION</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
@@ -33,11 +40,26 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center gap-6">
+        {/* Search Button */}
         <img
+          onClick={() => {
+            // Get current path
+            const currentPath = window.location.pathname;
+            // Only show search if on collection page or if going to collection page
+            if (currentPath.includes("/collection")) {
+              setShowSearch(true);
+            } else {
+              // Option 1: Navigate to collection and then show search
+              window.location.href = "/collection";
+              // Or Option 2: Show a message
+              // alert("Please go to Collection page to search");
+            }
+          }}
           src={assets.search_icon}
-          className="w-5 cursor-pointer"
+          className="w-5 cursor-pointer hover:opacity-80 transition-opacity"
           alt="Search"
         />
+
         <div className="group relative">
           <img
             src={assets.profile_icon}
@@ -101,7 +123,10 @@ loading-4 bg-black text-white rounded-full text-[8px]"
               HOME
             </NavLink>
             <NavLink
-              onClick={() => setVisible(false)}
+              onClick={() => {
+                setVisible(false);
+                setShowSearch(true); // Show search when clicking collection in mobile
+              }}
               className="py-2 pl-6 border"
               to="/collection"
             >
