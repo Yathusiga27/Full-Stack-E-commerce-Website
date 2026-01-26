@@ -5,7 +5,7 @@ import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch } = useContext(ShopContext); // Add this
+  const { setShowSearch, getCartCount } = useContext(ShopContext); // Add this
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
@@ -85,7 +85,7 @@ const Navbar = () => {
 flex items-center justify-center 
 loading-4 bg-black text-white rounded-full text-[8px]"
           >
-            10
+            {getCartCount()}
           </p>
         </Link>
         <img
