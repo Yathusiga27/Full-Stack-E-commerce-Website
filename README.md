@@ -1,9 +1,3 @@
-Sure 🙂
-Below is a **clean, professional README.md** you can directly use for your project that has **frontend / backend / admin** folders.
-I’ve written it in a way that also looks good for **GitHub**, **college review**, and **resume projects**.
-
-You can copy–paste this and adjust names if needed.
-
 ---
 
 # 🛒 Full Stack E-Commerce Website
