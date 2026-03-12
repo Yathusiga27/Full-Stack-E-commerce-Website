@@ -8,8 +8,7 @@ const Footer = () => {
         <div>
           <img src={assets.logo} className="mb-5 w-32" alt="Logo" />
           <p className="w-full md:w-2/3 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Cupiditate, hic.
+            Forever brings you modern fashion designed for comfort, confidence, and everyday style. We focus on quality materials and timeless designs to help you look and feel your best.
           </p>
         </div>
 

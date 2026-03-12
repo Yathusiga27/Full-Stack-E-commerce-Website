@@ -16,7 +16,7 @@ const BestSeller = () => {
     <div className="my-10">
       <div className="text-center text-3xl py-8">
         <Title text1={'BEST'} text2={'SELLER'} />
-        <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nihil similique laudantium sunt eos iste dolor, fugiat tempore alias nesciunt rerum cumque minima blanditiis labore modi deserunt tempora. Asperiores, quas.</p>
+        <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">Our bestselling pieces are loved by customers for their perfect blend of style, comfort, and quality. Carefully crafted with premium materials and modern designs, these favorites are must-have additions to any wardrobe.</p>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
         {bestSeller.map((item, index) => (
