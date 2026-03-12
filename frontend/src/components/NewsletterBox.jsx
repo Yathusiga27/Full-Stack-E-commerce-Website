@@ -11,7 +11,7 @@ const NewsletterBox = () => {
         Subscribe now & get 20% off
       </p>
       <p className="text-gray-400 mt-3">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Join our newsletter to receive exclusive offers, new collection updates, and special discounts delivered straight to your inbox.
       </p>
       <form
         onSubmit={onSubmitHandler}
