@@ -221,7 +221,11 @@ http://localhost:
 ## 🤝 Contributing
 
 Pull requests are welcome.
-For major changes, please open an issue first to discuss what you’d like to change.
+For major changes, please open an issue first to discuss what you’d like to change.                                                                                                                                                                                                                                                                                                                       ---
+## Deployed URLs
+Backend :- https://forever-backend-three-lake.vercel.app/
+Frontend :- https://forever-frontend-zeta-six.vercel.app/
+Admin :- https://forever-admin-delta-nine.vercel.app/
 
 ---
 
